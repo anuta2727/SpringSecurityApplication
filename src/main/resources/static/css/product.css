@@ -1,0 +1,67 @@
+body{
+    font-family: 'Neucha', cursive;
+    background-color: #BAC2C6;
+
+}
+
+.zero{
+    padding: 30px;
+    margin:30px;
+}
+
+.first{
+    min-height: 150px;
+}
+
+header{
+    background-color: #646a6e;
+    color: white;
+}
+
+input{
+    border: 2px solid grey;
+    color: grey;
+    font-size: 20px;
+    margin: 0 0 10px;
+    padding: 15px 10px 15px 40px;
+    width: 400px;
+}
+
+input:hover{
+    filter: drop-shadow(2px 2px 2px black);
+}
+
+.third{
+    min-height: 150px;
+}
+
+.item{
+    padding:20px;
+}
+
+img{
+    width: 290px;
+    height: 290px;
+    margin:10px;
+}
+
+img:hover{
+    filter: drop-shadow(5px 5px 5px black);
+}
+
+a{
+    color:#8261d4;
+}
+
+a:hover{
+    color: white;
+}
+
+.one{
+    padding:0;
+    margin: 20px
+}
+
+.item-8{
+    margin: 20px;
+}

@@ -1,0 +1,29 @@
+body{
+    font-family: 'Neucha', cursive;
+    background-color: #BAC2C6;
+    text-align:center;
+
+}
+header{
+    background-color: #646a6e;
+    color: white;
+}
+
+.first{
+    min-height: 150px;
+}
+
+
+.item{
+    padding:20px;
+}
+
+img{
+    width: 290px;
+    height: 290px;
+    margin:10px;
+}
+
+img:hover{
+    filter: drop-shadow(5px 5px 5px black);
+}
