@@ -18,6 +18,7 @@ header{
     color: white;
 }
 
+
 input{
     border: 2px solid grey;
     color: grey;
@@ -39,13 +40,13 @@ input:hover{
     padding:20px;
 }
 
-.flower{
+img{
     width: 290px;
     height: 290px;
     margin:10px;
 }
 
-.flower:hover{
+img:hover{
     filter: drop-shadow(5px 5px 5px black);
 }
 
@@ -65,4 +66,3 @@ a:hover{
 .item-8{
     margin: 20px;
 }
-

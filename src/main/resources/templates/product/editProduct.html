@@ -64,6 +64,11 @@
           <div style="color: red" th:if="${#fields.hasErrors('seller')}" th:errors="*{seller}"></div>
           <br>
           <br>
+          <div class="images" th:each="img : ${editProduct.getImageList()}">
+            <img style="padding:10px;" th:src="'/img/' + ${img.getFileName()}" width="290px" height="290">
+          </div>
+          <br>
+          <br>
           <input type="submit" value="Редактировать">
         </form>
   </div>
