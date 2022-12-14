@@ -51,64 +51,64 @@
 
     <div id="textSearching" style="display:none";>
 
-    <div class="row second align-items-center">
+        <div class="row second align-items-center">
 
-        <div class="col-md-3 col-sm-12 col-12">
+            <div class="col-md-3 col-sm-12 col-12">
+            </div>
+
+            <form class="item-2 col-md-6 col-sm-12 col-12 text-center" th:method="POST" th:action="@{/search}" th:value="*{value_search}">
+                <fieldset>
+                    <legend>Выберите параметры для сортировки, поиска, фильтрации</legend>
+                    <br>
+                    <label for="search">Поиск по наименованию</label>
+                    <br>
+                    <input type="search" name="search"  th:value="*{value_search}" id="search">
+                    <br>
+                    <br>
+                    <p>Цена, ₽</p>
+                    <label for="ot">От</label>
+                    <br>
+                    <input type="text" name="ot"  th:value="*{value_price_ot}" id="ot">
+                    <br>
+                    <label for="do">До</label>
+                    <br>
+                    <input type="text" name="do"  th:value="*{value_price_do}" id="do">
+                    <br>
+                    <br>
+                    <input type="radio" id="ascending_price" name="price" value="sorted_by_ascending_price">
+                    <br>
+                    <label for="ascending_price">Отсортировать по возрастанию цены</label>
+                    <br>
+                    <br>
+                    <input type="radio" id="descending_price" name="price" value="sorted_by_descending_price">
+                    <br>
+                    <label for="descending_price">Отсортировать по убыванию цены</label>
+                    <br>
+                    <h4>Категория товаров: </h4>
+                    <br>
+                    <input type="radio" id="flowers" name="category" value="flowers">
+                    <br>
+                    <label for="flowers">Цветы</label>
+                    <br>
+                    <br>
+                    <input type="radio" id="bouquets" name="category" value="bouquets">
+                    <br>
+                    <label for=bouquets>Букеты</label>
+                    <br>
+                    <br>
+                    <input type="radio" id="baskets" name="category" value="baskets">
+                    <br>
+                    <label for="baskets">Корзины цветов</label>
+                    <br>
+                    <br>
+                    <input type="submit" value="Найти">
+                </fieldset>
+            </form>
         </div>
-
-        <form class="item-2 col-md-6 col-sm-12 col-12 text-center" th:method="POST" th:action="@{/search}" th:value="*{value_search}">
-            <fieldset>
-                <legend>Выберите параметры для сортировки, поиска, фильтрации</legend>
-                <br>
-                <label for="search">Поиск по наименованию</label>
-                <br>
-                <input type="search" name="search"  th:value="*{value_search}" id="search">
-                <br>
-                <br>
-                <p>Цена, ₽</p>
-                <label for="ot">От</label>
-                <br>
-                <input type="text" name="ot"  th:value="*{value_price_ot}" id="ot">
-                <br>
-                <label for="do">До</label>
-                <br>
-                <input type="text" name="do"  th:value="*{value_price_do}" id="do">
-                <br>
-                <br>
-                <input type="radio" id="ascending_price" name="price" value="sorted_by_ascending_price">
-                <br>
-                <label for="ascending_price">Отсортировать по возрастанию цены</label>
-                <br>
-                <br>
-                <input type="radio" id="descending_price" name="price" value="sorted_by_descending_price">
-                <br>
-                <label for="descending_price">Отсортировать по убыванию цены</label>
-                <br>
-                <h4>Категория товаров: </h4>
-                <br>
-                <input type="radio" id="flowers" name="category" value="flowers">
-                <br>
-                <label for="flowers">Цветы</label>
-                <br>
-                <br>
-                <input type="radio" id="bouquets" name="category" value="bouquets">
-                <br>
-                <label for=bouquets>Букеты</label>
-                <br>
-                <br>
-                <input type="radio" id="baskets" name="category" value="baskets">
-                <br>
-                <label for="baskets">Корзины цветов</label>
-                <br>
-                <br>
-                <input type="submit" value="Найти">
-            </fieldset>
-        </form>
     </div>
-
-    <div class="row third col-md-12 col-sm-12 col-12 align-items-center text-center">
-        <h2 class="item-o text-center">Результат:</h2>
-    </div>
+<!--    <div class="row third col-md-12 col-sm-12 col-12 align-items-center text-center">-->
+<!--        <h2 class="item-o text-center">Результат:</h2>-->
+<!--    </div>-->
 
     <div class="row fourth">
         <div class="item col-md-3 col-sm-6 col-12" th:each="product : ${search_product}">
@@ -122,7 +122,7 @@
     </div>
 
     <hr>
-    </div>
+
 
     <div class="row third col-md-12 col-sm-12 col-12 align-items-center text-center">
         <h2 class="item-o text-center">Доступные товары:</h2>

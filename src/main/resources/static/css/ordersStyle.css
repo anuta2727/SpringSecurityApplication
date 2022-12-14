@@ -27,3 +27,17 @@ img{
 img:hover{
     filter: drop-shadow(5px 5px 5px black);
 }
+
+.order{
+    padding:25px;
+    text-align:center;
+    background-color: white;
+    width:800px;
+    height:100%;
+    margin-top: 30px;
+    margin-bottom: 30px;
+}
+
+.item-0:hover{
+    filter: drop-shadow(5px 5px 5px black);
+}

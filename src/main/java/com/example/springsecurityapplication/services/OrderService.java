@@ -35,12 +35,12 @@ public class OrderService {
         Optional<Order> optionalOrder = orderRepository.findById(id);
         return optionalOrder.orElse(null);
     }
-
+    // Изменить статус
     @Transactional
     public void updateOrderStatus(Order order){
         orderRepository.save(order);
     }
-
+    // Поиск по последним 4м символам
     @Transactional
     public List findByLastFourCharacters(String s){
         List<Order> orders = orderRepository.findByLastFourCharacters(s);

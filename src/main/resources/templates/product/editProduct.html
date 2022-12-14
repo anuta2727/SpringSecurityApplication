@@ -7,7 +7,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Neucha&display=swap" rel="stylesheet">
-  <link th:href="@{/css/editProduct.css}" type="text/css" rel="stylesheet">
+  <link th:href="@{/css/editAddCss.css}" type="text/css" rel="stylesheet">
 </head>
 <body>
 <header>
@@ -19,12 +19,24 @@
   </div>
 </header>
 <div class="container">
+
+  <div class="row align-items-center">
+
+    <div class="item-1 col-md-2 col-sm-12 col-12 text-center">
+    </div>
+
+    <form style="background-color: #BAC2C6; border:none;" class="item-15 col-md-8 col-sm-12 col-12 text-center" method="get" th:action="@{/admin}">
+      <input class="main" style="width:200px; padding:0px; font-size:16px; color:black;" type="submit" value="На главную страницу">
+    </form>
+  </div>
+
+
   <div class="row second align-items-center">
 
     <div class="item-1 col-md-2 col-sm-12 col-12 text-center">
     </div>
 
-        <form class="item-2 col-md-8 col-sm-12 col-12 text-center" th:method="POST" th:action="@{/admin/product/edit/{id}(id=${editProduct.getId()})}" th:object="${editProduct}">
+        <form class="item-2 col-md-8 col-sm-12 col-12 text-center" th:method="POST" th:action="@{/admin/product/edit/{id}(id=${editProduct.getId()})}" th:object="${editProduct}" enctype="multipart/form-data">
           <label for="title">Введите наименование: </label>
           <br>
           <input type="text" th:field="*{title}" placeholder="Наименование" id="title">
@@ -67,6 +79,8 @@
           <div class="images" th:each="img : ${editProduct.getImageList()}">
             <img style="padding:10px;" th:src="'/img/' + ${img.getFileName()}" width="290px" height="290">
           </div>
+
+          <a th:href="@{/admin/product/{id_product}/image/delete/{id_img}(id_product=${editProduct.getId()}, id_img=${editProduct.getImageList().get(0).getId()})}" class="btn_img-delete">Удалить фото</a>
           <br>
           <br>
           <input type="submit" value="Редактировать">

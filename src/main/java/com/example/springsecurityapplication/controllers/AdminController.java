@@ -6,6 +6,7 @@ import com.example.springsecurityapplication.models.Order;
 import com.example.springsecurityapplication.models.Person;
 import com.example.springsecurityapplication.models.Product;
 import com.example.springsecurityapplication.repositories.CategoryRepository;
+import com.example.springsecurityapplication.repositories.ImageRepository;
 import com.example.springsecurityapplication.repositories.OrderRepository;
 import com.example.springsecurityapplication.repositories.PersonRepository;
 import com.example.springsecurityapplication.security.PersonDetails;
@@ -37,6 +38,7 @@ public class AdminController {
     @Value("${upload.path}")
     private String uploadPath;
 
+    private final ImageRepository imageRepository;
     private final PersonRepository personRepository;
     private final OrderRepository orderRepository;
     private final PersonService personService;
@@ -50,7 +52,8 @@ public class AdminController {
     private final CategoryRepository categoryRepository;
 
     @Autowired
-    public AdminController(PersonRepository personRepository, OrderRepository orderRepository, PersonService personService,  OrderService orderService, ProductValidator productValidator, ProductService productService, CategoryRepository categoryRepository) {
+    public AdminController(ImageRepository imageRepository, PersonRepository personRepository, OrderRepository orderRepository, PersonService personService, OrderService orderService, ProductValidator productValidator, ProductService productService, CategoryRepository categoryRepository) {
+        this.imageRepository = imageRepository;
         this.personRepository = personRepository;
         this.orderRepository = orderRepository;
         this.personService = personService;
@@ -313,7 +316,19 @@ public class AdminController {
         return "redirect:/admin/order/edit/{id}";
     }
 
+    //Удаление фото
+    @GetMapping("/product/{id_product}/image/delete/{id_img}")
+    public String deleteImage(@PathVariable("id_product") int id_product, @PathVariable("id_img") int id_img) {
+
+            Product product = productService.getProductId(id_product);
+            if(product.getImageList().size() > 1) {
+                imageRepository.deleteImage(id_img);
+            }
+            return "redirect:/admin/product/edit/" + id_product;
+        }
 
 
 
-}
+
+
+    }

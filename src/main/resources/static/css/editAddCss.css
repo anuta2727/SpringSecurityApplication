@@ -27,14 +27,13 @@ form{
     margin-bottom: 30px;
 }
 
-lebel{
-    font-size: 20px;
+label{
+    font-size:14px;
 }
 
 input{
     border: 2px solid grey;
     color: grey;
-    font-size: 20px;
     margin: 0 0 10px;
     padding: 15px 10px 15px 40px;
     width: 400px;
@@ -57,13 +56,19 @@ input[type="submit"] {
     padding: 15px;
 }
 
-input[type="submit"]:hover{
-    background-color: rgb(70, 64, 64);
-    color: ghostwhite;
-}
 
 textarea{
     width: 420px;
     height: 200px;
     padding:15px;
+}
+
+.item-15{
+    background-color: #BAC2C6;
+    border:none;
+}
+.main{
+    width:200px;
+    padding:5px;
+    font-size:16px;
 }

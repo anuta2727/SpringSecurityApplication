@@ -4,6 +4,7 @@ body{
 
 }
 
+
 .first{
     min-height: 150px;
 }
@@ -15,6 +16,7 @@ body{
 header{
     background-color: #646a6e;
     color: white;
+    min-height: 150px;
 }
 
 img{

@@ -21,8 +21,8 @@
 
 <div class="row second align-items-center">
 
-      <div class="col-md-3 col-sm-6 col-12 text-center" th:each="product : ${cart_product}">
-        <img th:src="'/img/' + ${product.imageList[0].getFileName()}">
+      <div class="cart-item col-md-3 col-sm-6 col-12 text-center" style="margin-top: 20px;" th:each="product : ${cart_product}">
+        <img th:src="'/img/' + ${product.imageList[0].getFileName()}" width="290px" height="290px">
         <br>
         <br>
         <a th:href="@{/product/info/{id}(id=${product.getId()})}" th:text="${product.getTitle()}"></a>
