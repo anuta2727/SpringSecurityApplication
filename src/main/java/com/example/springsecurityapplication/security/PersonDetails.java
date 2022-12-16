@@ -48,7 +48,7 @@ public class PersonDetails implements UserDetails {
         return true;
     }
 
-    // Пароль являеться действительным/валидным
+    // Пароль является действительным/валидным
     @Override
     public boolean isCredentialsNonExpired() {
         return true;
@@ -60,7 +60,7 @@ public class PersonDetails implements UserDetails {
         return true;
     }
 
-    // Метод по получанию объект пользователя
+    // Метод по получению объекта пользователя
     public Person getPerson(){
         return this.person;
     }

@@ -8,6 +8,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Neucha&display=swap" rel="stylesheet">
     <link th:href="@{/css/editAddCss.css}" type="text/css" rel="stylesheet">
+    <link rel="shortcut icon" th:href="@{/static/img/icon2.ico}" type="image/x-icon">
 </head>
 <body>
     <header>
@@ -76,7 +77,7 @@
                 <div style="color: red" th:if="${#fields.hasErrors('seller')}" th:errors="*{seller}"></div>
                 <br>
                 <br>
-                <p style="color: red">Вы можете добавить до 5 фотографий. Первая фотография не может быть пустой</p>
+                <p style="color: red">Вы можете добавить до 5 фотографий.</p>
                 <input type="file" name="file_one">
                 <br>
                 <input type="file" name="file_two">

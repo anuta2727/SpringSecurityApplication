@@ -8,6 +8,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Neucha&display=swap" rel="stylesheet">
     <link th:href="@{/css/person.css}" type="text/css" rel="stylesheet">
+    <link rel="shortcut icon" th:href="@{/static/img/icon2.ico}" type="image/x-icon">
 </head>
 <body>
 <header>
@@ -38,6 +39,7 @@
                     <option th:value="ROLE_USER" th:text="ROLE_USER"></option>
                 </select>
                 <button type="submit">Изменить роль</button>
+                <a th:href="@{/admin/person/delete/{id}(id=${person.getId()})}">Удалить пользователя</a>
                 </div>
             </form>
 

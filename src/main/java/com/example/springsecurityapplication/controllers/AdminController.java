@@ -213,6 +213,13 @@ public class AdminController {
         return "redirect:/admin";
     }
 
+    // Метод по удалению пользователей
+    @GetMapping("/person/delete/{id}")
+    public String deletePerson(@PathVariable("id") int id){
+        personService.deletePerson(id);
+        return "redirect:/admin/person";
+    }
+
     // Метод по удалению товара по id
     @GetMapping("/product/delete/{id}")
     public String deleteProduct(@PathVariable("id") int id){
@@ -278,12 +285,7 @@ public class AdminController {
         return "admin/personInfo";
     }
 
-    // Метод по удалению пользователей
-    @GetMapping("/person/delete/{id}")
-    public String deletePerson(@PathVariable("id") int id){
-        personService.deletePerson(id);
-        return "redirect:/admin/person";
-    }
+
 
     //Поиск заказа по последним 4м символам
     @GetMapping("/order/search")
